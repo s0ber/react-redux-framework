@@ -1,4 +1,4 @@
-# New Motion Assignment
+# React + Redux = <3
 
 ## Running the project
 

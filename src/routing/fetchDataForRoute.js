@@ -1,5 +1,4 @@
 import {routes} from 'routes'
-import fetchMapData from 'actions/pages/map/fetchData'
 
 export default function(router, dispatch) {
   return new Promise((resolve, reject) => {
@@ -14,7 +13,7 @@ export default function(router, dispatch) {
         data = {pageId: 'login'}
         break
       case routes.MAP:
-        request = dispatch(fetchMapData())
+        data = {pageId: 'map'}
         break
       case routes.SETTINGS:
         data = {pageId: 'settings'}

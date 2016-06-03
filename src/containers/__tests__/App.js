@@ -7,7 +7,6 @@ import App from '../App'
 import Link from 'layouts/Link'
 import Layout from 'layouts/Layout'
 import BackButton from 'layouts/BackButton'
-import LocateMeButton from 'layouts/LocateMeButton'
 import CurrentPage from 'containers/CurrentPage'
 import {paths} from 'routes'
 
@@ -27,8 +26,7 @@ describe('App', () => {
           <Layout>
             <Layout.Header
               minimizeLogo={false}
-              leftButton={false}
-              rightButton={false} />
+              leftButton={false} />
             <Layout.Body>
               <CurrentPage />
             </Layout.Body>
@@ -47,27 +45,7 @@ describe('App', () => {
             minimizeLogo={true}
             leftButton={
               <Link path={paths.HOME_PATH()}><BackButton title='Home' /></Link>
-            }
-            rightButton={false} />
-          <Layout.Body>
-            <CurrentPage />
-          </Layout.Body>
-        </Layout>
-      )
-    })
-  })
-
-  context('current page is map', () => {
-    it('renders geolocation button on the right', () => {
-      component = render({currentPageId: 'map', map: {}, updateGeolocation: sinon.spy()})
-      expect(component).to.equalJSX(
-        <Layout>
-          <Layout.Header
-            minimizeLogo={true}
-            leftButton={
-              <Link path={paths.HOME_PATH()}><BackButton title='Home' /></Link>
-            }
-            rightButton={<LocateMeButton map={{}} handleGeolocation={sinon.spy()} /> } />
+            } />
           <Layout.Body>
             <CurrentPage />
           </Layout.Body>
