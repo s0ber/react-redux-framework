@@ -1,0 +1,24 @@
+@import '../imports.sass'
+
+.Label
+  display: block
+  font-weight: bold
+  font-size: .8em
+  margin-bottom: .3em
+  +no_select
+
+  &.is-required
+    margin-left: -.7em
+
+  abbr
+    position: relative
+    top: -2px
+    border: none
+    color: #c93636
+
+  &.for-checkbox
+    height: 29px
+    line-height: 29px
+
+    .Label-inner
+      vertical-align: middle
