@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import ReactDOM from 'react-dom'
 import {Simulate} from 'react-addons-test-utils'
 import renderer from 'utils/test_helpers/renderer'
@@ -11,7 +11,7 @@ describe('CurrentPage', () => {
   let render
 
   before(() => {
-    render = renderer(CurrentPage.WrappedComponent)
+    render = renderer(CurrentPage)
   })
 
   context('current page is not yet specified', () => {

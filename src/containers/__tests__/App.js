@@ -28,7 +28,7 @@ describe('App', () => {
               minimizeLogo={false}
               leftButton={false} />
             <Layout.Body>
-              <CurrentPage />
+              <CurrentPage currentPageId={page} />
             </Layout.Body>
           </Layout>
         )
@@ -47,7 +47,7 @@ describe('App', () => {
               <Link path={paths.HOME_PATH()}><BackButton title='Home' /></Link>
             } />
           <Layout.Body>
-            <CurrentPage />
+            <CurrentPage currentPageId='login' />
           </Layout.Body>
         </Layout>
       )
