@@ -7,15 +7,16 @@ import Icon from 'icons/Icon'
 
 describe('Menu', () => {
   let component
-  const render = renderer(Menu)
+  const render = renderer(Menu.WrappedComponent)
 
-  it('renders menu based on provided menu items array', () => {
+  it('renders menu based on provided menu items array (without current page menu item)', () => {
     const menuItems = [
-      {title: 'Map', path: '/map', icon: 'map-marker'},
-      {title: 'Settings', path: '/settings', icon: 'gear'}
+      {title: 'Home', path: '/', icon: 'home', pageId: 'home'},
+      {title: 'Map', path: '/map', icon: 'map-marker', pageId: 'map'},
+      {title: 'Settings', path: '/settings', icon: 'gear', pageId: 'settings'}
     ]
 
-    component = render({items: menuItems})
+    component = render({items: menuItems, currentPageId: 'home'})
     expect(component).to.equalJSX(
       <div className='Menu'>
         <Link className='Menu-item textShadow' key='0' path='/map'>

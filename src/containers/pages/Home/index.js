@@ -5,11 +5,11 @@ import Page from 'layouts/Page'
 import Button from 'layouts/Button'
 import Link from 'layouts/Link'
 import Menu from 'layouts/Menu'
+import {MENU_ITEMS} from 'constants'
 
 import {ANONYMOUS} from 'constants'
 import {paths} from 'routes'
 import logoutUser from 'actions/currentUser/logoutUser'
-import {MENU_ITEMS} from 'constants'
 
 @connect((state) => {
   return {
