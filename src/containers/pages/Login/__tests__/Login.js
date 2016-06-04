@@ -29,7 +29,7 @@ describe('Login', () => {
     component = render({fields: {username: {}, password: {}}, submitting: false, submit})
 
     expect(component.render()).to.eql(
-      <Page fixed photo='amsterdam'>
+      <Page>
         <Form onSubmit={submit}>
           <Form.Fields>
             <TextBox autoFocus label='Email' />

@@ -32,7 +32,7 @@ export default class Login extends Component {
     const {fields: {username, password}} = this.props
 
     return (
-      <Page fixed photo='amsterdam'>
+      <Page>
         <Form onSubmit={this.props.submit}>
           <Form.Fields>
             <TextBox autoFocus label='Email' {...username} />

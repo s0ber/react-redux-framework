@@ -6,7 +6,6 @@ import domRenderer from 'utils/test_helpers/domRenderer'
 import App from '../App'
 import Link from 'layouts/Link'
 import Layout from 'layouts/Layout'
-import BackButton from 'layouts/BackButton'
 import CurrentPage from 'containers/CurrentPage'
 import {paths} from 'routes'
 
@@ -24,33 +23,10 @@ describe('App', () => {
         component = render({currentPageId: page})
         expect(component).to.equalJSX(
           <Layout>
-            <Layout.Header
-              minimizeLogo={false}
-              leftButton={false} />
-            <Layout.Body>
-              <CurrentPage currentPageId={page} />
-            </Layout.Body>
+            <CurrentPage currentPageId={page} />
           </Layout>
         )
       }
-    })
-  })
-
-  context('current page is not home', () => {
-    it('renders back button and minimizes logo', () => {
-      component = render({currentPageId: 'login'})
-      expect(component).to.equalJSX(
-        <Layout>
-          <Layout.Header
-            minimizeLogo={true}
-            leftButton={
-              <Link path={paths.HOME_PATH()}><BackButton title='Home' /></Link>
-            } />
-          <Layout.Body>
-            <CurrentPage currentPageId='login' />
-          </Layout.Body>
-        </Layout>
-      )
     })
   })
 })
