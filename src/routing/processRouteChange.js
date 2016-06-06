@@ -1,13 +1,22 @@
+// This is an entry point for processing every route change
+
 import {routes, paths} from 'routes'
 import {tinyActions} from 'redux-tiny-router'
 
 import loadCurrentUser from './loadCurrentUser'
 import fetchDataForRoute from './fetchDataForRoute'
 import processCurrentRoute from './processCurrentRoute'
+let isInitialRouteLoaded = false
 
 export function processRouteChange(next, action, getState, dispatch) {
   const {router} = action
   const currentRoute = router.src
+
+  // We don't want to process initial route as "popped"
+  if (!isInitialRouteLoaded) {
+    action.option = undefined
+    isInitialRouteLoaded = true
+  }
 
   // Don't do anything, if trying to load current route
   if (router.path == getState().router.path) {
@@ -32,7 +41,7 @@ export function processRouteChange(next, action, getState, dispatch) {
     // This should return cached data, when handling a popped state,
     // so we would be able to immediately reproduce previous scroll position.
     // But when rendering a new route, we should always fetch fresh data.
-    fetchDataForRoute(router, dispatch).then((data) => {
+    fetchDataForRoute(router, dispatch, action).then((data) => {
       // When pushing new state, this will remember current scroll position,
       // and then scroll to the top.
       // We should call this before rendering the page,

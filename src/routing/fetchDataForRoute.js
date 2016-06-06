@@ -1,6 +1,6 @@
 import {routes} from 'routes'
 
-export default function(router, dispatch) {
+export default function(router, dispatch, action) {
   return new Promise((resolve, reject) => {
     let request
     let data
@@ -25,7 +25,15 @@ export default function(router, dispatch) {
     if (request) {
       request.then((data) => { resolve(data) })
     } else {
-      resolve(data)
+      // simulate real request for loading new states
+      if (action.option !== 'popEvent') {
+        setTimeout(() => {
+          resolve(data)
+        }, 500)
+      // simulate loading cached data for popped states
+      } else {
+        resolve(data)
+      }
     }
   })
 }
