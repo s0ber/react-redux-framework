@@ -2,7 +2,7 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 
 // Reducers
 import {tinyReducer} from 'redux-tiny-router'
-import * as rootReducers from 'reducers'
+import * as rootReducers from 'state/reducers'
 import {reducer as formReducer} from 'redux-form'
 
 // Middlewares

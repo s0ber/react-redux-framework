@@ -1,5 +1,5 @@
 import request from '_lib/request'
-import logout from 'actions/authorization/logout'
+import logout from 'state/authorization/logout'
 
 const identity = (x) => x
 

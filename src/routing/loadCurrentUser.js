@@ -1,4 +1,4 @@
-import * as currentUser from 'actions/currentUser'
+import * as currentUser from 'state/currentUser'
 
 export default function(state, dispatch) {
   return new Promise((resolve, _reject) => {

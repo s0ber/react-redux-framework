@@ -2,7 +2,7 @@ import {tinyActions} from 'redux-tiny-router'
 
 import {authorize} from '_lib/request'
 import * as accessToken from '_lib/accessToken'
-import * as currentUser from 'actions/currentUser'
+import * as currentUser from 'state/currentUser'
 import {paths} from 'routes'
 
 export default function login(loginData) {

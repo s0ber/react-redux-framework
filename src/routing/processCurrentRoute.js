@@ -1,5 +1,5 @@
 import {routes} from 'routes'
-import changePageId from 'actions/changePageId'
+import {changePageId} from 'state/currentPageId'
 
 export default function(router, data, dispatch, _state) {
   switch (router.src) {

@@ -1,6 +1,6 @@
 import * as accessToken from '_lib/accessToken'
-import actions from 'actions'
-const {LOGOUT_USER} = actions
+
+export const LOGOUT_USER = 'LOGOUT_USER'
 
 export default function logout() {
   return (dispatch) => {
