@@ -1,7 +1,7 @@
 import {routes} from 'routes'
 
 export default function(router, dispatch, action) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _reject) => {
     let request
     let data
 

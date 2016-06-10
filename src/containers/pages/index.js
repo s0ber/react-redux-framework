@@ -1,11 +1,4 @@
-import Home from './Home'
-import Login from './Login'
-import Map from './Map'
-import Settings from './Settings'
-
-export default {
-  Home,
-  Login,
-  Map,
-  Settings
-}
+export Home from './Home'
+export Login from './Login'
+export Map from './Map'
+export Settings from './Settings'

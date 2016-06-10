@@ -1,13 +1,12 @@
-import fetchCurrentUser from 'actions/currentUser/fetchCurrentUser'
-import setCurrentUser from 'actions/currentUser/setCurrentUser'
+import * as currentUser from 'actions/currentUser'
 
 export default function(state, dispatch) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _reject) => {
     if (state.currentUser) {
       resolve()
     } else {
-      dispatch(fetchCurrentUser()).then((currentUser) => {
-        dispatch(setCurrentUser(currentUser))
+      dispatch(currentUser.fetch()).then((user) => {
+        dispatch(currentUser.set(user))
         resolve()
       })
     }

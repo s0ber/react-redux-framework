@@ -9,7 +9,7 @@ import {MENU_ITEMS} from 'constants'
 
 import {ANONYMOUS} from 'constants'
 import {paths} from 'routes'
-import logoutUser from 'actions/currentUser/logoutUser'
+import {logout as logoutUser} from 'actions/authorization'
 
 @connect((state) => {
   return {

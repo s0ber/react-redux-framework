@@ -1,7 +1,2 @@
-import currentPageId from './currentPageId'
-import currentUser from './currentUser'
-
-export {
-  currentPageId,
-  currentUser
-}
+export currentPageId from './currentPageId'
+export currentUser from './currentUser'

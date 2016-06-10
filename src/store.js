@@ -18,6 +18,6 @@ const finalCreateStore = compose(
   applyMiddleware(...middlewares),
 )(createStore)
 
-export default function(data, url) {
+export default function(data, _url) {
   return finalCreateStore(reducers, data)
 }
