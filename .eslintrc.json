@@ -1,0 +1,41 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "jquery": true,
+    "node": true
+  },
+  "extends": "toptal",
+  "globals": {
+    "require": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "babel"
+  ],
+  "rules": {
+    // Use Babel plugin's rules with the same settings as in Toptal config
+    "array-bracket-spacing": 0,
+    "babel/array-bracket-spacing": [2, "never"],
+
+    "object-curly-spacing": 0,
+    "babel/object-curly-spacing": [2, "never"],
+
+    "object-shorthand": 0,
+    "babel/object-shorthand": [2, "always"],
+
+    "arrow-parens": 0,
+    "babel/arrow-parens": [2, "always"],
+
+    // Additional customization
+    "no-unused-vars": [2, {"argsIgnorePattern": "^_"}],
+    "react/jsx-uses-react": 1,
+    "operator-linebreak": [2, "after"]
+  }
+}

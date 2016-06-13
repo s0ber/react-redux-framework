@@ -1,7 +1,7 @@
-import {routes, paths} from 'routes'
-import changePageId from 'actions/changePageId'
+import {routes} from 'routes'
+import {changePageId} from 'state/currentPageId'
 
-export default function(router, data, dispatch, state) {
+export default function(router, data, dispatch, _state) {
   switch (router.src) {
     case routes.HOME:
       break

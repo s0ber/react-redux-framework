@@ -1,5 +1,5 @@
 import {utils} from 'redux-tiny-router'
-import createPathFn from 'utils/create_path_fn'
+import createPathFn from '_lib/createPathFn'
 
 const routes = {
   HOME: '/',
